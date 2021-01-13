@@ -1,6 +1,6 @@
-function getUrlParams() {
+function getUrlParams(url) {
   const params = {};
-  window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+  url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
     params[key] = value;
   });
   return params;

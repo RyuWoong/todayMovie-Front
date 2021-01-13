@@ -11,22 +11,23 @@ async function getMovieList(query) {
     return response.data;
   } catch (e) {
     console.log(e.message);
-    throw e;
+    return false;
   }
 }
 
 function MovieList({ location }) {
-  const query = queryString.parse(location.search);
-  console.log(query);
-  const [movieList, setMovieList] = useState();
+  const [movieList, setMovieList] = useState(false);
+  const MovieNm = queryString.parse(location.search);
+  console.log(movieList);
+
   useEffect(() => {
-    const data = getMovieList();
-    setMovieList(data);
-  }, []);
+    const data = getMovieList(MovieNm);
+    data.then((value) => setMovieList(value));
+  }, [location]);
 
   return (
     <div className="MovieList">
-      <ul>{movieList ? movieList.map((movie) => <MovieData movie={movie} />) : '영화 로딩중..'}</ul>
+      <ul css={{ listStyleType: 'none' }}>{movieList ? movieList.filter((list) => list.image !== '').map((movie, index) => <MovieData key={index} movie={movie} />) : '영화 로딩중..'}</ul>
     </div>
   );
 }

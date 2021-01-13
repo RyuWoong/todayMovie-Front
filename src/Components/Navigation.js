@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { css } from '@emotion/react';
 import Profile from 'Routes/Profile';
 import Sign from 'Routes/Sign';
+import { withRouter } from 'react-router-dom';
 
 const bar = css({
   display: 'flex',
@@ -9,8 +10,9 @@ const bar = css({
   width: '100%',
 });
 
-function Navigation({ isLogin, setShow }) {
+function Navigation({ history, isLogin }) {
   const [newText, setNewText] = useState('');
+  const [signShow, setShow] = useState(false);
 
   const onChange = (event) => {
     const value = event.target.value;
@@ -18,8 +20,10 @@ function Navigation({ isLogin, setShow }) {
   };
 
   const onSubmit = async (event) => {
-    //redirect로 처리하게 만들기.
+    event.preventDefault();
+    history.push(`/searchMovie?movieNm=${newText}`);
   };
+
   const onShow = () => {
     setShow(true);
   };
@@ -31,8 +35,9 @@ function Navigation({ isLogin, setShow }) {
         <input type="submit" value="검색" />
       </form>
       {isLogin ? <Profile /> : <button onClick={onShow}>Sign In</button>}
+      {signShow && <Sign setShow={setShow} />}
     </div>
   );
 }
 
-export default Navigation;
+export default withRouter(Navigation);

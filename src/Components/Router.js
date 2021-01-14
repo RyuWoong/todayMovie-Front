@@ -4,7 +4,7 @@ import Home from 'Routes/Home';
 import Profile from 'Routes/Profile';
 import Movie from 'Routes/Movie';
 import MovieList from './MovieList';
-import Navigation from './Navigation';
+import Navigation from './Header/HeaderTemplate/HeaderTemplate';
 
 function AppRouter({ isLogin }) {
   return (

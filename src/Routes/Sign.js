@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { css } from '@emotion/react';
-import SignIn from 'Components/SignIn';
-import SignUp from 'Components/SignUp';
+import SignIn from 'Components/Sign/SignIn/SignIn';
+import SignUp from 'Components/Sign/SignUp/SignUp';
 
 const modal = css({
   position: 'absolute',

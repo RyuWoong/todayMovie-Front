@@ -1,33 +1,27 @@
 import React, { useState } from 'react';
-import { css } from '@emotion/react';
+import { withRouter } from 'react-router-dom';
+
 import Profile from 'Routes/Profile';
 import Sign from 'Routes/Sign';
-import { withRouter } from 'react-router-dom';
 import SearchBox from '../SearchBox/SearchBox';
 import SignButton from '../SignButton/SignButton';
 
-const bar = css({
-  display: 'flex',
-  justifyContent: 'space-between',
-  width: '100%',
-});
+import { HeaderStyle } from './HederTemplateStyle';
 
-function Navigation({ history, isLogin }) {
+function HeaderTemplate({ history, isLogin }) {
   const [signShow, setShow] = useState(false);
-
-  const onKeyPress = async (event) => {};
 
   const onShow = () => {
     setShow(true);
   };
   return (
-    <div className="HeaderTemplate" css={bar}>
-      <img src="public/logo192.png" alt="logo" />
+    <div className="HeaderTemplate" css={HeaderStyle}>
+      <img src="../public/logo192.png" alt="logo" />
       <SearchBox />
-      {isLogin ? <Profile /> : <SignButton />}
+      {isLogin ? <Profile /> : <SignButton onShow={onShow} />}
       {signShow && <Sign setShow={setShow} />}
     </div>
   );
 }
 
-export default withRouter(Navigation);
+export default withRouter(HeaderTemplate);

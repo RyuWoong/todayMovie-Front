@@ -11,7 +11,15 @@ export const Modal = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  '& .SignCancle': {
+    position: 'absolute',
+    right: '5px',
+    top: '5px',
+    cursor: 'pointer',
+  },
   '& .SignChild': {
+    position: 'relative',
+    backgroundColor: 'white',
     border: '1px solid black',
     display: 'flex',
     flexDirection: 'column',

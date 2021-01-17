@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import Profile from 'Routes/Profile';
-import Sign from 'Routes/Sign';
+import Sign from 'Components/Sign/Sign';
 import SearchBox from '../SearchBox/SearchBox';
 import SignButton from '../SignButton/SignButton';
 

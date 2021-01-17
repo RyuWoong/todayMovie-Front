@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Modal, LinkButton } from '../styleSign';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import isEmail from 'utils/isEmail';
 
-function SignIn({ setSign }) {
+function SignIn({ setSign, setShow }) {
   const [email, setEmail] = useState('');
   const [signCheck, setSignCheck] = useState(false);
-  const checkUser = () => axios({ URL: 'localhost:4000/user/login', method: 'get', params: { email: email } }).then((request) => request.data);
+  const checkUser = () => axios({ URL: 'localhost:4000/login', method: 'post', params: { email: email } }).then((request) => request.data);
   const onSubmit = async (event) => {
     event.preventDefault();
     const emailState = await checkUser();
@@ -25,9 +27,14 @@ function SignIn({ setSign }) {
   const onChangeSign = () => {
     setSign(false);
   };
+
+  const onSignClose = () => {
+    setShow(false);
+  };
   return (
     <div className="Sign" css={Modal}>
       <div className="SignChild">
+        <FontAwesomeIcon className="SignCancle" icon={faTimes} onClick={onSignClose} />
         {signCheck ? (
           <>
             <h2>이메일 확인</h2>

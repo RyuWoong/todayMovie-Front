@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-d
 import Home from 'Routes/Home';
 import Profile from 'Routes/Profile';
 import Movie from 'Routes/Movie';
-import MovieList from './MovieList';
+import searchMovie from '../Routes/SearchMovie';
 import Navigation from './Header/HeaderTemplate/HeaderTemplate';
 
 function AppRouter({ isLogin }) {
@@ -13,7 +13,7 @@ function AppRouter({ isLogin }) {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/profile" component={Profile} />
-        <Route path="/searchMovie" component={MovieList} />
+        <Route path="/searchMovie" component={searchMovie} />
         <Route path="/movie/:id" component={Movie} />
         <Redirect from="*" to="/" />
       </Switch>

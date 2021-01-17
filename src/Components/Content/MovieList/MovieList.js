@@ -1,18 +1,9 @@
 import React from 'react';
-import { css } from '@emotion/react';
+import { MovieListStyle } from './MovieListStyle';
 
-const card = css({
-  display: 'flex',
-  border: '1px solid black',
-  div: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-});
-
-function MovieData({ movie }) {
+function MovieList({ movie }) {
   return (
-    <li css={card}>
+    <li css={MovieListStyle}>
       <img src={movie.image} alt={movie.subtitle} />
       <div>
         <h2>{movie.title.replace(/(<([^>]+)>)/gi, '')}</h2>
@@ -23,4 +14,4 @@ function MovieData({ movie }) {
   );
 }
 
-export default MovieData;
+export default MovieList;

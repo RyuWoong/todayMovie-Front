@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Modal, LinkButton } from '../styleSign';
-
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // CSS in JS
 
 // Component
-function SignUp({ setSign }) {
+function SignUp({ setSign, setShow }) {
   const [email, setEmail] = useState();
   const [name, setName] = useState();
 
@@ -20,10 +21,14 @@ function SignUp({ setSign }) {
   const onChangeSign = () => {
     setSign(true);
   };
+  const onSignClose = () => {
+    setShow(false);
+  };
 
   return (
     <div className="Sign" css={Modal}>
       <div className="SignChild">
+        <FontAwesomeIcon className="SignCancle" icon={faTimes} onClick={onSignClose} />
         <h2>회원가입</h2>
         <label>💌 이메일로 회원가입</label>
         <form onSubmit={onSubmit}>

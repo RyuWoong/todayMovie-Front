@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
+import { SearchBoxStyle } from './SearchBoxStyle';
 
 function SearchBox({ history }) {
   const [value, setValue] = useState('');
@@ -16,8 +17,8 @@ function SearchBox({ history }) {
     }
   };
   return (
-    <div className="SearchBox">
-      <input type="search" value={value} onChange={onChange} onKeyPress={onKeyPress} placeholder="영화를 검색해주세요." />
+    <div className="SearchBox" css={SearchBoxStyle}>
+      <input className="SearchInput" type="text" value={value} onChange={onChange} onKeyPress={onKeyPress} placeholder="영화를 검색해주세요." />
     </div>
   );
 }

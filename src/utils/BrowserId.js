@@ -5,9 +5,8 @@ function uuid() {
   return tokens[2] + tokens[1] + tokens[0] + tokens[3] + tokens[4];
 }
 
-export function setCookie(name) {
-  const browserId = uuid();
-  document.cookie = `${name}=${browserId} domain=localhost.com`;
+export function setCookie(name, token = uuid()) {
+  document.cookie = `${name}=${token}`;
 }
 
 export function getCookie(name) {

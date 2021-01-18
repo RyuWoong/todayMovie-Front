@@ -1,27 +1,30 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useRef, useState } from 'react';
 import { Modal, LinkButton } from '../styleSign';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import isEmail from 'utils/isEmail';
+import { UserLogin } from 'lib/api/post/UserLogin';
 
 function SignIn({ setSign, setShow }) {
   const [email, setEmail] = useState('');
   const [signCheck, setSignCheck] = useState(false);
-  const checkUser = () => axios({ URL: 'localhost:4000/login', method: 'post', params: { email: email } }).then((request) => request.data);
+  const [checkEmail, setCheckEmail] = useState(true);
+  const emailBox = useRef();
   const onSubmit = async (event) => {
     event.preventDefault();
-    const emailState = await checkUser();
-    console.log(emailState);
-    //setSignCheck(true);
+    if (isEmail(email) === false) {
+      return setCheckEmail(false);
+    }
+    const emailState = await UserLogin(email);
+    if (emailState === true) {
+      setSignCheck(true);
+    } else {
+      setCheckEmail(false);
+      emailBox.current.focus();
+    }
   };
   const onChange = (event) => {
     const value = event.target.value;
-    if (isEmail(value) === true) {
-      console.log('알맞는 이메일 양식입니다.');
-    } else {
-      console.log('알맞지 않은 이메일 양식입니다.');
-    }
     setEmail(value);
   };
   const onChangeSign = () => {
@@ -45,12 +48,13 @@ function SignIn({ setSign, setShow }) {
             <h2>로그인</h2>
             <label>이메일로 로그인</label>
             <form onSubmit={onSubmit}>
-              <input type="textbox" name="email" placeholder="이메일을 입력해주세요." value={email} onChange={onChange} />
+              <input type="textbox" name="email" placeholder="이메일을 입력해주세요." value={email} onChange={onChange} ref={emailBox} />
+              {checkEmail ? <div></div> : <div>가입하지 않은 이메일이거나, 잘못된 이메일입니다.</div>}
               <input type="submit" value="로그인" />
             </form>
             <div className="footer">
               회원이 아니시라면,
-              <span calssName="SignChanger" css={LinkButton} onClick={onChangeSign}>
+              <span className="SignChanger" css={LinkButton} onClick={onChangeSign}>
                 회원가입
               </span>
             </div>

@@ -30,6 +30,6 @@
 
 - React
 - React Router
-- Emtion
+- Emotion
 - react-app-rewired
 - axios

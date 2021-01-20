@@ -16,7 +16,8 @@ function SignIn({ setSign, setShow }) {
       return setCheckEmail(false);
     }
     const emailState = await UserLogin(email);
-    if (emailState === true) {
+    console.log(emailState);
+    if (emailState.status === 200) {
       setSignCheck(true);
     } else {
       setCheckEmail(false);

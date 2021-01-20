@@ -12,7 +12,7 @@ export const SearchBoxStyle = css({
     color: '#575756',
     borderRadius: '50px',
     border: '1px solid #575756',
-    transition: 'all 250ms ease-in-out',
+    transition: 'all 500ms ease-in-out',
     textAlign: 'center',
     '&::placeholder': {
       color: 'color(#575756 a(0.8));',

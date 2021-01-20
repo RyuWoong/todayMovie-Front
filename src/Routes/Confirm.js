@@ -10,10 +10,11 @@ function Confirm({ location, history }) {
     const requestUser = UserConfirm(query);
     requestUser
       .then((result) => {
-        setCookie('aid', result.data);
+        console.log(result);
         history.push('/');
       })
       .catch((err) => {
+        console.log(err);
         setConfirmState(false);
       });
   });

@@ -1,14 +1,7 @@
-import { useState } from 'react';
-import { getCookie, setCookie } from 'utils/BrowserId';
+import { useState, useEffect } from 'react';
 import AppRouter from './Router';
 import { css } from '@emotion/react';
-
-(function () {
-  if (getCookie('tid') === null) {
-    setCookie('tid');
-  }
-  console.log('TID', getCookie('tid'));
-})();
+import Cookies from './Cookies';
 
 const layout = css({
   display: 'flex',
@@ -19,6 +12,12 @@ const layout = css({
 
 function App() {
   const [isLogin, setLogin] = useState(false);
+  useEffect(() => {
+    const loginState = Cookies();
+    console.log('로그인 확인', loginState);
+    setLogin(loginState);
+  }, [isLogin]);
+
   return (
     <div css={layout}>
       <AppRouter isLogin={isLogin} />

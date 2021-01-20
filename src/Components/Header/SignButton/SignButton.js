@@ -1,3 +1,4 @@
+import { Button } from 'Components/Common/Button';
 import React from 'react';
 
 function SignButton({ onShow }) {
@@ -5,7 +6,11 @@ function SignButton({ onShow }) {
     onShow(true);
   };
 
-  return <button onClick={showSign}>로그인</button>;
+  return (
+    <button css={Button('#ff922b', '#fd7e14')} onClick={showSign}>
+      로그인
+    </button>
+  );
 }
 
 export default SignButton;

@@ -7,6 +7,7 @@ import SearchBox from '../SearchBox/SearchBox';
 import SignButton from '../SignButton/SignButton';
 
 import { HeaderStyle } from './HederTemplateStyle';
+import Logo from '../Logo/Logo';
 
 function HeaderTemplate({ history, isLogin }) {
   const [signShow, setShow] = useState(false);
@@ -16,7 +17,7 @@ function HeaderTemplate({ history, isLogin }) {
   };
   return (
     <div className="HeaderTemplate" css={HeaderStyle}>
-      <img src="../public/logo192.png" alt="logo" />
+      <Logo />
       <SearchBox />
       {isLogin ? <Profile /> : <SignButton onShow={onShow} />}
       {signShow && <Sign setShow={setShow} />}

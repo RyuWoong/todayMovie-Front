@@ -7,7 +7,7 @@ import searchMovie from '../Routes/SearchMovie';
 import Navigation from './Header/HeaderTemplate/HeaderTemplate';
 import Confirm from 'Routes/Confirm';
 
-function AppRouter({ isLogin }) {
+function AppRouter({ isLogin, setLogin }) {
   return (
     <Router>
       <Navigation isLogin={isLogin} />
@@ -16,7 +16,7 @@ function AppRouter({ isLogin }) {
         <Route path="/profile" component={Profile} />
         <Route path="/searchMovie" component={searchMovie} />
         <Route path="/movie/:id" component={Movie} />
-        <Route path="/confirm" component={Confirm} />
+        <Route path="/confirm" render={(props) => <Confirm setLogin={setLogin} {...props} />} />
         <Redirect from="*" to="/" />
       </Switch>
     </Router>

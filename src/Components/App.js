@@ -12,6 +12,7 @@ const layout = css({
 
 function App() {
   const [isLogin, setLogin] = useState(false);
+
   useEffect(() => {
     const loginState = Cookies();
     console.log('로그인 확인', loginState);
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <div css={layout}>
-      <AppRouter isLogin={isLogin} />
+      <AppRouter isLogin={isLogin} setLogin={setLogin} />
     </div>
   );
 }

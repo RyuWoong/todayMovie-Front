@@ -7,5 +7,5 @@ export const HeaderStyle = css({
   justifyContent: 'space-around',
   alignItems: 'center',
   boxSizing: 'border-box',
-  backgroundColor: '#e5dbff',
+  backgroundColor: '#ffc078',
 });

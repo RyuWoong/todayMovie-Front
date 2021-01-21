@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import qs from 'query-string';
 import { UserConfirm } from 'lib/api/post/UserConfirm';
-import { setCookie } from 'utils/BrowserId';
 
-function Confirm({ location, history }) {
+function Confirm({ location, history, setLogin }) {
   const [confirmState, setConfirmState] = useState(true);
   useEffect(() => {
     const query = qs.parse(location.search);
     const requestUser = UserConfirm(query);
     requestUser
       .then((result) => {
-        console.log(result);
-        history.push('/');
+        const { status } = result;
+        if (status === 201) {
+          setLogin(true);
+          history.push('/');
+        } else {
+          throw new Error();
+        }
       })
       .catch((err) => {
         console.log(err);

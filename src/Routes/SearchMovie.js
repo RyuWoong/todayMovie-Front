@@ -1,9 +1,14 @@
-import { Search } from 'lib/api/Search';
 import React, { useEffect, useState } from 'react';
-import qs from 'query-string';
+import { css } from '@emotion/react';
+import { Search } from 'lib/api/Search';
 
+import qs from 'query-string';
 import MovieList from '../Components/Content/MovieList/MovieList';
 import MovieTemplate from 'Components/Content/MovieTemplate/MovieTemplate';
+
+const Page = css`
+  height: 100%;
+`;
 
 function SearchMovie({ location }) {
   const [movieList, setMovieList] = useState(false);
@@ -14,7 +19,11 @@ function SearchMovie({ location }) {
     requestMovie.then((reuslt) => setMovieList(reuslt.data));
   }, [location]);
 
-  return <MovieTemplate>{movieList ? movieList.filter((list) => list.image !== '').map((movie, index) => <MovieList key={index} movie={movie} />) : '영화 로딩중..'}</MovieTemplate>;
+  return (
+    <div css={Page}>
+      <MovieTemplate>{movieList ? movieList.filter((list) => list.image !== '').map((movie, index) => <MovieList key={index} movie={movie} />) : '영화 로딩중..'}</MovieTemplate>
+    </div>
+  );
 }
 
 export default SearchMovie;

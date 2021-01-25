@@ -1,10 +1,10 @@
 import { css } from '@emotion/react';
 
-export const Button = (mainColor, subColor) => css`
+export const StyleButton = (mainColor, subColor, fontColor = 'white') => css`
   margin: 0;
   padding: 0.5rem 1rem;
   background-color: ${mainColor};
-  color: white;
+  color: ${fontColor};
   font-size: 1rem;
   font-weight: 400;
   text-align: center;

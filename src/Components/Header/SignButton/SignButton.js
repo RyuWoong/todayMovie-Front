@@ -1,4 +1,4 @@
-import { Button } from 'Components/Common/Button';
+import { StyleButton } from 'Components/Common/Button';
 import React from 'react';
 
 function SignButton({ onShow }) {
@@ -7,7 +7,7 @@ function SignButton({ onShow }) {
   };
 
   return (
-    <button css={Button('#ff922b', '#fd7e14')} onClick={showSign}>
+    <button css={StyleButton('#ff922b', '#fd7e14')} onClick={showSign}>
       로그인
     </button>
   );

@@ -1,13 +1,12 @@
 import { css } from '@emotion/react';
 
-export const MovieTemplateStyle = css({
-  listStyleType: 'none',
-  marginTop: '10px',
-  marginBottom: '10px',
-  '& ul': {
-    display: 'flex',
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-});
+export const MovieTemplateStyle = css`
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 100%;
+  & ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+`;

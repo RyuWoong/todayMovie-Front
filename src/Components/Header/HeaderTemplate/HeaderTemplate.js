@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import Sign from 'Components/Sign/Sign';
+import Sign from 'Components/Sign/SignTemplate/Sign';
 import SearchBox from '../SearchBox/SearchBox';
 import SignButton from '../SignButton/SignButton';
 

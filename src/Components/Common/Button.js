@@ -19,8 +19,7 @@ export const StyleButton = (mainColor, subColor, fontColor = 'white') => css`
   cursor: pointer;
   transition: 0.5s;
   &:hover,
-  &:active,
-  &:focus {
+  &:active {
     background-color: ${subColor};
     outline: 0;
   }

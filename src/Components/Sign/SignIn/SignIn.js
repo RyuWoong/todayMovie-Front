@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Modal, LinkButton } from '../styleSign';
+import { LinkButton } from '../SignTemplate/styleSign';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import isEmail from 'utils/isEmail';
@@ -36,32 +36,30 @@ function SignIn({ setSign, setShow }) {
     setShow(false);
   };
   return (
-    <div className="Sign" css={Modal}>
-      <div className="SignChild">
-        <FontAwesomeIcon className="SignCancle" icon={faTimes} onClick={onSignClose} />
-        {signCheck ? (
-          <>
-            <h2>이메일 확인</h2>
-            <div>{email}로 로그인 링크를 발송하였습니다.</div>
-          </>
-        ) : (
-          <>
-            <h2>로그인</h2>
-            <label>이메일로 로그인</label>
-            <form onSubmit={onSubmit}>
-              <input type="textbox" name="email" placeholder="이메일을 입력해주세요." value={email} onChange={onChange} ref={emailBox} />
-              {checkEmail ? <div></div> : <div>가입하지 않은 이메일이거나, 잘못된 이메일입니다.</div>}
-              <input type="submit" value="로그인" />
-            </form>
-            <div className="footer">
-              회원이 아니시라면,
-              <span className="SignChanger" css={LinkButton} onClick={onChangeSign}>
-                회원가입
-              </span>
-            </div>
-          </>
-        )}
-      </div>
+    <div className="SignChild">
+      <FontAwesomeIcon className="SignCancle" icon={faTimes} onClick={onSignClose} />
+      {signCheck ? (
+        <>
+          <h2>이메일 확인</h2>
+          <div>{email}로 로그인 링크를 발송하였습니다.</div>
+        </>
+      ) : (
+        <>
+          <h2>로그인</h2>
+          <label>이메일로 로그인</label>
+          <form onSubmit={onSubmit}>
+            <input type="textbox" name="email" placeholder="이메일을 입력해주세요." value={email} onChange={onChange} ref={emailBox} />
+            {checkEmail ? <div></div> : <div>가입하지 않은 이메일이거나, 잘못된 이메일입니다.</div>}
+            <input type="submit" value="로그인" />
+          </form>
+          <div className="footer">
+            회원이 아니시라면,
+            <span className="SignChanger" css={LinkButton} onClick={onChangeSign}>
+              회원가입
+            </span>
+          </div>
+        </>
+      )}
     </div>
   );
 }

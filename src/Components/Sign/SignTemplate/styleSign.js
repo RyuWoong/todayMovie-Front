@@ -1,16 +1,6 @@
 import { css } from '@emotion/react';
 
-export const Modal = css({
-  position: 'absolute',
-  top: '0',
-  bottom: '0',
-  left: '0',
-  right: '0',
-  width: '100%',
-  height: '100%',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
+export const styleSign = css({
   '& .SignCancle': {
     position: 'absolute',
     right: '5px',

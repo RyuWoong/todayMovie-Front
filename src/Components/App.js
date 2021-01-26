@@ -3,12 +3,15 @@ import AppRouter from './Router';
 import { css } from '@emotion/react';
 import Cookies from './Cookies';
 
-const layout = css({
-  display: 'flex',
-  flexDirection: 'column',
-  width: '100%',
-  height: '100%',
-});
+const layout = css`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  & .Page {
+    margin-top: 70px;
+  }
+`;
 
 function App() {
   const [isLogin, setLogin] = useState(false);

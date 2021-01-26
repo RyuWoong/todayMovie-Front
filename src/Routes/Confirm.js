@@ -22,6 +22,6 @@ function Confirm({ location, history, setLogin }) {
         setConfirmState(false);
       });
   });
-  return <>{confirmState ? <div>컨펌</div> : <div>이미 만료된 토큰입니다. 로그인 과정을 다시 시도해주세요.</div>}</>;
+  return <div className="Page">{confirmState ? '컨펌' : '이미 만료된 토큰입니다. 로그인 과정을 다시 시도해주세요.'}</div>;
 }
 export default Confirm;

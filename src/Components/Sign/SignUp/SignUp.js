@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, LinkButton } from '../styleSign';
+import { LinkButton } from '../SignTemplate/styleSign';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // CSS in JS
@@ -26,22 +26,20 @@ function SignUp({ setSign, setShow }) {
   };
 
   return (
-    <div className="Sign" css={Modal}>
-      <div className="SignChild">
-        <FontAwesomeIcon className="SignCancle" icon={faTimes} onClick={onSignClose} />
-        <h2>회원가입</h2>
-        <label>💌 이메일로 회원가입</label>
-        <form onSubmit={onSubmit}>
-          <input type="textbox" name="email" placeholder="이메일을 입력해주세요." value={email} onChange={onChange} />
-          <input type="textbox" name="name" placeholder="이름을 입력해주세요." value={name} onChange={onChange} />
-          <input type="submit" value="회원가입" />
-        </form>
-        <div className="footer">
-          회원이시라면,
-          <span className="SignChanger" css={LinkButton} onClick={onChangeSign}>
-            로그인
-          </span>
-        </div>
+    <div className="SignChild">
+      <FontAwesomeIcon className="SignCancle" icon={faTimes} onClick={onSignClose} />
+      <h2>회원가입</h2>
+      <label>💌 이메일로 회원가입</label>
+      <form onSubmit={onSubmit}>
+        <input type="textbox" name="email" placeholder="이메일을 입력해주세요." value={email} onChange={onChange} />
+        <input type="textbox" name="name" placeholder="이름을 입력해주세요." value={name} onChange={onChange} />
+        <input type="submit" value="회원가입" />
+      </form>
+      <div className="footer">
+        회원이시라면,
+        <span className="SignChanger" css={LinkButton} onClick={onChangeSign}>
+          로그인
+        </span>
       </div>
     </div>
   );

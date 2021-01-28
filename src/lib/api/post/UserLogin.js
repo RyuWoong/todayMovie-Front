@@ -1,4 +1,4 @@
-import axios from 'lib/default';
+import axios from '@/lib/default';
 
 export const UserLogin = (userEmail) => {
   console.log('이메일', userEmail);

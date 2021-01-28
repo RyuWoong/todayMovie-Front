@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import qs from 'query-string';
-import { UserConfirm } from 'lib/api/post/UserConfirm';
+import { UserConfirm } from '@/lib/api/post/UserConfirm';
 
 function Confirm({ location, history, setLogin }) {
   const [confirmState, setConfirmState] = useState(true);

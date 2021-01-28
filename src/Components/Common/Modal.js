@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 export const Modal = css`
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -11,4 +11,5 @@ export const Modal = css`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 `;

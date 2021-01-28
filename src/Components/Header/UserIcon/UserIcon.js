@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import defaultUser from 'default.png';
-import { UserIconStyle } from 'Components/Header/UserIcon/UserIconStyle';
+import defaultUser from '@/default.png';
+import { UserIconStyle } from '@/Components/Header/UserIcon/UserIconStyle';
 import SubMenu from '../SubMenu/SubMenu';
 
 function UserIcon() {

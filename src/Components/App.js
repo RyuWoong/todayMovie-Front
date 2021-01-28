@@ -2,15 +2,12 @@ import { useState, useEffect } from 'react';
 import AppRouter from './Router';
 import { css } from '@emotion/react';
 import Cookies from './Cookies';
+import 'antd/lib/style/themes/default.less';
+import 'antd/dist/antd.less';
 
 const layout = css`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  & .Page {
-    margin-top: 70px;
-  }
 `;
 
 function App() {
@@ -23,7 +20,7 @@ function App() {
   }, [isLogin]);
 
   return (
-    <div css={layout}>
+    <div id="App" css={layout}>
       <AppRouter isLogin={isLogin} setLogin={setLogin} />
     </div>
   );

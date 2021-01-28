@@ -1,5 +1,7 @@
-import { StyleButton } from 'Components/Common/Button';
+import { StyleButton } from '@/Components/Common/Button';
+import { Button } from 'antd';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function SignButton({ onShow }) {
   const showSign = () => {
@@ -7,9 +9,9 @@ function SignButton({ onShow }) {
   };
 
   return (
-    <button css={StyleButton('#ff922b', '#fd7e14')} onClick={showSign}>
+    <Button type="primary" onClick={showSign}>
       로그인
-    </button>
+    </Button>
   );
 }
 

@@ -1,4 +1,4 @@
-import { getCookie, setCookie } from 'utils/BrowserId';
+import { getCookie, setCookie } from '@/utils/BrowserId';
 
 function Cookies() {
   if (getCookie('tid') === null) {

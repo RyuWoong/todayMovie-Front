@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { LinkButton } from '../SignTemplate/styleSign';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // CSS in JS
 
 // Component
@@ -27,7 +25,9 @@ function SignUp({ setSign, setShow }) {
 
   return (
     <div className="SignChild">
-      <FontAwesomeIcon className="SignCancle" icon={faTimes} onClick={onSignClose} />
+      <div className="SignCancle" onClick={onSignClose}>
+        X
+      </div>
       <h2>회원가입</h2>
       <label>💌 이메일로 회원가입</label>
       <form onSubmit={onSubmit}>

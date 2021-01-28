@@ -1,9 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { LinkButton } from '../SignTemplate/styleSign';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import isEmail from 'utils/isEmail';
-import { UserLogin } from 'lib/api/post/UserLogin';
+import isEmail from '@/utils/isEmail';
+import { UserLogin } from '@/lib/api/post/UserLogin';
 
 function SignIn({ setSign, setShow }) {
   const [email, setEmail] = useState('');
@@ -37,7 +35,9 @@ function SignIn({ setSign, setShow }) {
   };
   return (
     <div className="SignChild">
-      <FontAwesomeIcon className="SignCancle" icon={faTimes} onClick={onSignClose} />
+      <div className="SignCancle" onClick={onSignClose}>
+        X
+      </div>
       {signCheck ? (
         <>
           <h2>이메일 확인</h2>

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { css } from '@emotion/react';
-import { Search } from 'lib/api/Search';
+import { Search } from '@/lib/api/Search';
 
 import qs from 'query-string';
-import MovieList from '../Components/Content/MovieList/MovieList';
-import MovieTemplate from 'Components/Content/MovieTemplate/MovieTemplate';
+import MovieList from '@/Components/Content/MovieList/MovieList';
+import MovieTemplate from '@/Components/Content/MovieTemplate/MovieTemplate';
 
 function SearchMovie({ location }) {
   const [movieList, setMovieList] = useState(false);

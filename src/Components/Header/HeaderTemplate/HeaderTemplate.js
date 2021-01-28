@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import Sign from 'Components/Sign/SignTemplate/Sign';
+import Sign from '@/Components/Sign/SignTemplate/Sign';
 import SearchBox from '../SearchBox/SearchBox';
 import SignButton from '../SignButton/SignButton';
 
@@ -16,12 +16,12 @@ function HeaderTemplate({ history, isLogin }) {
     setShow(true);
   };
   return (
-    <div className="HeaderTemplate" css={HeaderStyle}>
+    <>
       <Logo />
       <SearchBox />
       {isLogin ? <UserIcon /> : <SignButton onShow={onShow} />}
       {signShow && <Sign setShow={setShow} />}
-    </div>
+    </>
   );
 }
 

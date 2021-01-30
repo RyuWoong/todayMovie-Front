@@ -11,9 +11,8 @@ export const SearchBoxStyle = css({
     lineHeight: '1.2rem',
     color: '#495057',
     borderRadius: '50px',
-    border: '1px solid #495057',
+    border: '1px solid #52c41a',
     transition: 'all 300ms ease-in-out',
-    textAlign: 'center',
     '&::placeholder': {
       color: '#495057;',
       textTransform: 'uppercase',
@@ -22,7 +21,7 @@ export const SearchBoxStyle = css({
     '&:focus': {
       outline: '0',
       border: '1px solid transparent',
-      borderBottom: '1px solid #495057',
+      borderBottom: '1px solid #52c41a',
       borderRadius: '0',
     },
   },

@@ -53,6 +53,5 @@
     "customize-cra-less-loader": "^1.0.0",
     "less": "^4.1.0",
     "nodemon": "^2.0.6"
-  },
-  "proxy": "http://localhost:4000/"
+  }
 }

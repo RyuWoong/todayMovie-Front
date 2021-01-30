@@ -1,15 +1,15 @@
 import React from 'react';
 
 function MovieCard({ movie }) {
+  console.log(movie);
+  const imgLink = `https://image.tmdb.org/t/p/w185${movie.poster_path}`;
   return (
     <>
-      <img src={movie.image} alt={movie.subtitle} />
+      <img src={imgLink} alt={movie.title} />
       <div className="MovieInfo">
-        <div>
-          <h2 dangerouslySetInnerHTML={{ __html: movie.title }}></h2>
-          <h3>{movie.subtitle}</h3>
-          <span>{movie.pubDate}년</span>
-        </div>
+        <h2 className="MovieTitle">{movie.title}</h2>
+        <h3 className="MovieSubTitle">{movie.origianl_title}</h3>
+        <div className="MovieYear">{movie.release_date}년</div>
       </div>
     </>
   );

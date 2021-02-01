@@ -1,7 +1,7 @@
 import React from 'react';
 import ReviewCard from '../ReviewCard/ReviewCard';
 
-function ReviewList({ children }) {
+function ReviewList() {
   return (
     <div>
       이래서 추천해요!

@@ -1,7 +1,6 @@
 import React from 'react';
 
 function MovieCard({ movie }) {
-  console.log(movie);
   const imgLink = `https://image.tmdb.org/t/p/w185${movie.poster_path}`;
   return (
     <>

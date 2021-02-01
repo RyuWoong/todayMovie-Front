@@ -7,7 +7,6 @@ import { getSearchMovie } from '../lib/api/getSearchMovie';
 
 function SearchMovie({ location }) {
   const [movieList, setMovieList] = useState(false);
-  const [detailState, showDetail] = useState(false);
 
   useEffect(() => {
     const query = qs.parse(location.search);
@@ -21,7 +20,7 @@ function SearchMovie({ location }) {
 
   return (
     <div className="Page">
-      <MovieTemplate>{movieList ? movieList.map((movie, index) => <MovieList key={index} movie={movie} showDetail={showDetail} />) : '영화 로딩중..'}</MovieTemplate>
+      <MovieTemplate>{movieList ? movieList.map((movie, index) => <MovieList key={index} movie={movie} />) : '영화 로딩중..'}</MovieTemplate>
     </div>
   );
 }

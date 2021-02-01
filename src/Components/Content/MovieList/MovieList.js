@@ -1,18 +1,19 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import MovieCard from '../MovieCard/MovieCard';
 import { MovieListStyle } from './MovieListStyle';
 
-function MovieList({ movie, showDetail }) {
-  const isReview = false;
-  const handleLink = () => {
-    showDetail(movie);
+function MovieList({ movie, history }) {
+  const goMovieInfo = () => {
+    const link = `/movie/${movie.id}`;
+    history.push(link);
   };
 
   return (
-    <li onClick={handleLink} css={MovieListStyle(isReview)}>
+    <li onClick={goMovieInfo} css={MovieListStyle}>
       <MovieCard movie={movie} />
     </li>
   );
 }
 
-export default MovieList;
+export default withRouter(MovieList);

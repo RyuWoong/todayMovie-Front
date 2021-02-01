@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-export const MovieListStyle = (is) => css`
+export const MovieListStyle = () => css`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;

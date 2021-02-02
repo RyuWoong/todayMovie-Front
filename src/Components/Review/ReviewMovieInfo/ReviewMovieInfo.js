@@ -9,7 +9,7 @@ function ReviewMovieInfo({ movie }) {
       <div className="MovieInfo">
         <h2>{movie.title}</h2>
         <h3>{movie.origianl_title}</h3>
-        <div className="year">{movie.release_date}년</div>
+        <div className="year">{movie.release_date}</div>
         <div className="overview">{movie.overview}</div>
       </div>
     </div>

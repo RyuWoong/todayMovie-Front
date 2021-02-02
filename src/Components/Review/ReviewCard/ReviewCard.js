@@ -1,11 +1,13 @@
 import { Card } from 'antd';
 import React from 'react';
 
-function ReviewCard({ ReviewData }) {
+function ReviewCard({ Review }) {
   return (
-    <Card>
-      <div className="ReviewText">{ReviewData.text}</div>
-      <div className="Reviewer">by.{ReviewData.email}</div>
+    <Card style={{ width: '200px', height: '300px' }}>
+      <div className="ReviewRate">{Review.rating}</div>
+      <div className="ReviewPlatform">{Review.platform}</div>
+      <div className="ReviewText">{Review.content}</div>
+      <div className="Reviewer">by.{Review.userID}</div>
     </Card>
   );
 }

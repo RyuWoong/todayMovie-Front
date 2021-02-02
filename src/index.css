@@ -441,6 +441,7 @@ th {
 html,
 body,
 #root,
-#App {
+#App,
+.Page {
   min-height: 100%;
 }

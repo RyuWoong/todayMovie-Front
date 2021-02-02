@@ -27,9 +27,9 @@ export const MovieListStyle = () => css`
     margin-top: 5px;
     margin-bottom: 5px;
   }
-  & img {
+  & .Poster {
     width: 200px;
-    height: 200px;
+    height: 250px;
   }
   & h2 {
     margin: 0;

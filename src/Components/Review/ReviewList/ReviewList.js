@@ -3,10 +3,10 @@ import React from 'react';
 import ReviewButton from '../ReviewButton/ReviewButton';
 import ReviewCard from '../ReviewCard/ReviewCard';
 
-function ReviewList({ ReviewData }) {
+function ReviewList({ MyReview, ReviewData }) {
   return (
     <div>
-      <ReviewButton />
+      {MyReview.length > 0 ? <div>내리뷰!</div> : <ReviewButton />}
       <div>
         {ReviewData.length > 0 ? (
           ReviewData.map((review, index) => <ReviewCard key={index} Review={review} />)

@@ -1,6 +1,6 @@
-import axios from '@/lib/TMdefault';
+import axios from '@/lib/default';
 
 export const getMovieInfo = (movieID) => {
   console.log(('영화ID', movieID));
-  return axios({ url: `/movie/${movieID}`, method: 'get' });
+  return axios({ url: '/movie', method: 'get', params: { movieID } });
 };

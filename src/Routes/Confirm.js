@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import qs from 'query-string';
-import { UserConfirm } from '@/lib/api/post/UserConfirm';
+import { UserConfirm } from '@/lib/api/UserConfirm';
 
 function Confirm({ location, history, setLogin }) {
   const [confirmState, setConfirmState] = useState(true);
@@ -22,6 +22,10 @@ function Confirm({ location, history, setLogin }) {
         setConfirmState(false);
       });
   });
-  return <div className="Page">{confirmState ? '컨펌' : '이미 만료된 토큰입니다. 로그인 과정을 다시 시도해주세요.'}</div>;
+  return (
+    <div className="Page">
+      {confirmState ? '컨펌' : '이미 만료된 토큰입니다. 로그인 과정을 다시 시도해주세요.'}
+    </div>
+  );
 }
 export default Confirm;

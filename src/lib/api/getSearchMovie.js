@@ -1,6 +1,6 @@
-import axios from '@/lib/TMdefault';
+import axios from '@/lib/default';
 
 export const getSearchMovie = (isQuery) => {
-  console.log(('영화명', isQuery.movieNm));
-  return axios({ url: '/search/movie', method: 'get', params: { query: isQuery.movieNm } });
+  console.log('영화명', isQuery.movieNm);
+  return axios({ url: '/searchmovie', method: 'get', params: { movieNm: isQuery.movieNm } });
 };

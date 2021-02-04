@@ -11,13 +11,13 @@ const layout = css`
 `;
 
 function App() {
+  const loginState = Cookies();
   const [isLogin, setLogin] = useState(false);
 
   useEffect(() => {
-    const loginState = Cookies();
     console.log('로그인 확인', loginState);
     setLogin(loginState);
-  }, [isLogin]);
+  }, [loginState]);
 
   return (
     <div id="App" css={layout}>

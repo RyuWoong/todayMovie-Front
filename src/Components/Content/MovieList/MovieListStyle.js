@@ -1,13 +1,16 @@
 import { css } from '@emotion/react';
 
 export const MovieListStyle = () => css`
+  position: relative;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   align-items: center;
+  margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
+  padding-top: 5px;
   width: 200px;
   height: auto;
   box-shadow: 0 5px 20px #575756;
@@ -18,30 +21,24 @@ export const MovieListStyle = () => css`
   overflow: hidden;
   font-family: MaruBuri-Regular;
 
+  & .MainTitle {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .MainTitle h2 {
+    font-size: 0.9rem;
+    margin: 0;
+    align-items: center;
+  }
   &:hover {
     transform: translateY(-3px);
   }
-  & .MovieInfo {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-  & .Poster {
-    width: 200px;
-    height: 250px;
-  }
-  & h2 {
-    margin: 0;
-    font-size: 1.3rem;
-  }
-  & h3 {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #343a40;
-  }
-  & .MovieYear {
-    color: #868e96;
+
+  &:hover > .MovieInfo {
+    opacity: 1;
   }
 `;

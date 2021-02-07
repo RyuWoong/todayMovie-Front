@@ -1,14 +1,38 @@
-import React from 'react';
-import { Button, Form, Input, Menu, Modal, Radio } from 'antd';
+import React, { useState } from 'react';
+import { Button, Cascader, Form, Input, Modal, Radio } from 'antd';
 import { FormOutlined } from '@ant-design/icons';
-import { useState } from 'react/cjs/react.development';
 import { putUserReview } from '../../../lib/api/post/putUserReview';
 
 const { TextArea } = Input;
 
 const CustomModal = ({ isVisible, setVisible }) => {
   const [form] = Form.useForm();
-
+  const options = [
+    {
+      code: 'Netflix',
+      name: 'Netflix',
+    },
+    {
+      code: 'Watcha',
+      name: 'Watcha',
+    },
+    {
+      code: '기타 OTT',
+      name: '기타 OTT',
+    },
+    {
+      code: 'IPTV',
+      name: 'IPTV',
+    },
+    {
+      code: '다운로드',
+      name: '다운로드',
+    },
+    {
+      code: '비디오,DVD',
+      name: '비디오,DVD',
+    },
+  ];
   const handleOK = () => {
     form.validateFields().then((values) => {
       console.log(values);
@@ -31,14 +55,11 @@ const CustomModal = ({ isVisible, setVisible }) => {
     >
       <Form form={form} layout="vertical">
         <Form.Item label="어디서 보셨나요?" name="Platform">
-          <Menu>
-            <Menu.Item key="0">Netflix</Menu.Item>
-            <Menu.Item key="1">Watcha</Menu.Item>
-            <Menu.Item key="2">타 OTT</Menu.Item>
-            <Menu.Item key="4">IPTV VOD</Menu.Item>
-            <Menu.Item key="5">다운로드</Menu.Item>
-            <Menu.Item key="6">비디오나 DVD</Menu.Item>
-          </Menu>
+          <Cascader
+            fieldNames={{ label: 'name', value: 'code' }}
+            options={options}
+            placeholder="플랫폼을 선택해주세요."
+          />
         </Form.Item>
         <Form.Item label="영화는 어땠나요?" name="Rate">
           <Radio.Group size="large">
@@ -47,7 +68,7 @@ const CustomModal = ({ isVisible, setVisible }) => {
             <Radio.Button value="-1">👎 별로예요.</Radio.Button>
           </Radio.Group>
         </Form.Item>
-        <Form.Item label="생각을 간략하게 남겨주세요." name="Text">
+        <Form.Item label="후기를 간략하게 남겨주세요." name="Text">
           <TextArea showCount maxLength={100} />
         </Form.Item>
       </Form>
